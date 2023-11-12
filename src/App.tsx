@@ -37,19 +37,24 @@ const App: React.FC = () => {
   const handleProvChange = (prov: Provinsi) => {
     setSelectedProv(prov);
     setSelectedKabKota(null); // Reset kab/kota saat ganti provinsi
+    setSelectedKecamatan(null);
+    setSelectedKelurahan(null);
   };
 
   const handleKabKotaChange = (kabKota: KabKota) => {
     setSelectedKabKota(kabKota);
+    setSelectedKecamatan(null);
+    setSelectedKelurahan(null);
   };
 
   const handleKecamatanChange = (kecamatan: Kecamatan) => {
     setSelectedKecamatan(kecamatan);
+    setSelectedKelurahan(null);
   };
   
   const handleKelurahanChange = (kelurahan: Kelurahan) => {
     setSelectedKelurahan(kelurahan);
-  };
+  };  
 
   return (
     <div>

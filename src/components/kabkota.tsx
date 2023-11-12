@@ -17,7 +17,7 @@ const KabKotaDrop: React.FC<KabKotaDropProps> = ({ selectedProv, onSelectKabKota
 
     useEffect(() => {
         // Fetch data kab/kota dari API Statis
-        axios.get<Kabkota[]>(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${selectedProv.id}.json`)
+        axios.get<KabKota[]>(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${selectedProv.id}.json`)
         .then((response) => setKabKotas(response.data))
         .catch((error) => console.error('Error fetching data:', error));
     }, [selectedProv]);
